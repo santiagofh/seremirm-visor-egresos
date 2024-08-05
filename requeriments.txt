@@ -1,1 +1,16 @@
+streamlit
+pandas
 plotly
+numpy
+geopandas
+matplotlib
+folium
+streamlit-folium
+statsmodels
+shapely
+pdfplumber
+requests
+openpyxl
+streamlit_authenticator
+bs4
+requests
