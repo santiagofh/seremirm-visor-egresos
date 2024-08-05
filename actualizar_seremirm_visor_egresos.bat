@@ -13,6 +13,3 @@ git commit -m "Actualización automática de datos y commit"
 
 REM Hacer push de los cambios al repositorio remoto
 git push
-
-REM Pausar para que puedas ver el resultado en la consola
-pause
