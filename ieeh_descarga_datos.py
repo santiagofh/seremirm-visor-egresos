@@ -8,11 +8,12 @@ import streamlit as st
 import plotly.express as px
 from datetime import datetime, timedelta
 import numpy as np
+import json
 
 # Definir URLs del reporte
 url_ieeh_2023 = 'https://reportesdeis.minsal.cl/ieeh/2023/Reporte/EstadoRegistroEgresoSeremiResumen.aspx'
 url_ieeh_2024 = 'https://reportesdeis.minsal.cl/ieeh/2024/Reporte/EstadoRegistroEgresoSeremiResumen.aspx'
-
+ieeh_reporte_0 = r"C:\Users\fariass\OneDrive - SUBSECRETARIA DE SALUD PUBLICA\Escritorio\GIE\IEEH-REM20\IEEH - Reporte 0\ieeh_reporte_0.json"
 # Definir función para extraer la tabla de la URL
 def extraeTable(url):
     response = requests.get(url, timeout=360)
@@ -88,14 +89,33 @@ def pendientes(df,control_mes):
     df.loc[establecimientos_pendientes.index, 'Estado'] = 'Pendiente'
     estado_counts = df['Estado'].value_counts().reset_index()
     estado_counts.columns = ['Estado', 'Número de Establecimientos']
-    return df, estado_counts        
+    return df, estado_counts    
+def rellenar_con_reporte_0(df, reporte_0):
+    for codigo, data in reporte_0.items():
+        for mes, valor in data.items():
+            if mes.isdigit():
+                mes = int(mes)
+                print(mes)
+                if mes in df.columns:
+                    df.loc[df['Codigo Establecimiento'] == (codigo), mes] = valor
+                    print((codigo))
+                    print(valor)
+                else:
+                    df[mes] = 0
+                    df.loc[df['Codigo Establecimiento'] == (codigo), mes] = valor
+    return df    
 #%%
+with open(ieeh_reporte_0, 'r', encoding='utf-8') as f:
+    reporte_0 = json.load(f)
+
 df_2023=extraeTable(url_ieeh_2023)
 df_2024=extraeTable(url_ieeh_2024)
 #%%
 df_2024_ajustado=seleccionar_y_ajustar_df(df_2024, 2024)
+df_2024_ajustado_reporte0=rellenar_con_reporte_0(df_2024_ajustado,reporte_0)
+#%%
 control_mes=es_despues_de_los_primeros_10_dias_habiles()
-df_2024_pendientes, tabla_pendientes=pendientes(df_2024_ajustado,control_mes)
+df_2024_pendientes, tabla_pendientes=pendientes(df_2024_ajustado_reporte0,control_mes)
 
 #%%
 

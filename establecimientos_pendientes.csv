@@ -1,9 +1,9 @@
 ,SEREMI de Salud,Codigo Establecimiento,Nombre Establecimiento,Total,1,2,3,4,5,6,7,8,9,10,11,12,Año,Estado
 42,SEREMI Metropolitana de Santiago,109200,Hospital Clínico Universidad de Chile,8.919,1.577,1.210,1.608,1.608,1.541,1.375,,,,,,,2024,Al día
 43,SEREMI Metropolitana de Santiago,109201,Clínica Dávila,19.192,3.312,2.669,3.196,3.404,3.373,3.238,,,,,,,2024,Al día
-44,SEREMI Metropolitana de Santiago,110201,Clínica Psiquiátrica Santa Cecilia,13,2,3,,4,2,2,,,,,,,2024,Pendiente
+44,SEREMI Metropolitana de Santiago,110201,Clínica Psiquiátrica Santa Cecilia,13,2,3,0,4,2,2,0,,,,,,2024,Al día
 45,SEREMI Metropolitana de Santiago,110270,Clínica Los Maitenes,732,143,162,143,129,139,16,,,,,,,2024,Al día
-46,SEREMI Metropolitana de Santiago,110272,Clínica Fundación Gantz,141,29,,24,35,23,30,,,,,,,2024,Pendiente
+46,SEREMI Metropolitana de Santiago,110272,Clínica Fundación Gantz,141,29,0,24,35,23,30,0,,,,,,2024,Al día
 47,SEREMI Metropolitana de Santiago,111200,Hospital Clínico Red de Salud UC CHRISTUS,3.544,1.305,997,1.242,,,,,,,,,,2024,Pendiente
 48,SEREMI Metropolitana de Santiago,111202,Hospital Clínico Mutual de Seguridad C.CH.C.,1.785,351,316,373,377,368,,,,,,,,2024,Al día
 49,SEREMI Metropolitana de Santiago,111203,Hospital Penitenciario,,,,,,,,,,,,,,2024,Pendiente
@@ -20,19 +20,19 @@
 60,SEREMI Metropolitana de Santiago,112201,Clínica RedSalud Vitacura,5.632,1.195,962,1.146,1.186,1.143,,,,,,,,2024,Al día
 61,SEREMI Metropolitana de Santiago,112204,Nueva Clínica Cordillera,580,580,,,,,,,,,,,,2024,Pendiente
 62,SEREMI Metropolitana de Santiago,112205,Clínica Psiquiatrica Bretaña,132,22,12,21,23,19,16,19,,,,,,2024,Al día
-63,SEREMI Metropolitana de Santiago,112207,Clínica del Carmen,265,46,42,48,49,58,22,,,,,,,2024,Al día
+63,SEREMI Metropolitana de Santiago,112207,Clínica del Carmen,268,46,42,48,49,58,25,,,,,,,2024,Al día
 64,SEREMI Metropolitana de Santiago,112211,Clínica Indisa,8.460,2.152,1.839,2.294,2.175,,,,,,,,,2024,Pendiente
 65,SEREMI Metropolitana de Santiago,112212,Clínica Las Condes,4.781,912,672,806,817,856,718,,,,,,,2024,Al día
 66,SEREMI Metropolitana de Santiago,112215,Clínica Macul,86,12,10,15,22,15,12,,,,,,,2024,Al día
 67,SEREMI Metropolitana de Santiago,112218,Clínica Miguel Claro,1.040,200,155,158,175,182,170,,,,,,,2024,Al día
 68,SEREMI Metropolitana de Santiago,112224,Clínica Psiquiatrica Pocuro,83,13,9,14,14,12,14,7,,,,,,2024,Al día
-69,SEREMI Metropolitana de Santiago,112228,Clínica San Andrés,16,7,3,2,,4,,,,,,,,2024,Pendiente
+69,SEREMI Metropolitana de Santiago,112228,Clínica San Andrés,16,7,3,2,0,4,0,0,,,,,,2024,Al día
 70,SEREMI Metropolitana de Santiago,112229,Pensionado San José,,,,,,,,,,,,,,2024,Pendiente
 71,SEREMI Metropolitana de Santiago,112238,Hospital FACH,2.857,471,406,452,526,520,482,,,,,,,2024,Al día
 72,SEREMI Metropolitana de Santiago,112240,Hospital Carabineros,2.914,488,448,498,515,506,459,,,,,,,2024,Al día
 73,SEREMI Metropolitana de Santiago,112241,Clínica Oriente,156,20,18,19,23,36,29,11,,,,,,2024,Al día
-74,SEREMI Metropolitana de Santiago,112242,Clínica IST Vitacura,338,195,115,28,,,,,,,,,,2024,Pendiente
-75,SEREMI Metropolitana de Santiago,112243,Centro CONIN Credes,7,3,,1,,2,1,,,,,,,2024,Pendiente
+74,SEREMI Metropolitana de Santiago,112242,Clínica IST Vitacura,338,195,115,28,0,0,0,0,,,,,,2024,Al día
+75,SEREMI Metropolitana de Santiago,112243,Centro CONIN Credes,7,3,0,1,0,2,1,0,,,,,,2024,Al día
 76,SEREMI Metropolitana de Santiago,112244,Hospital del Trabajador Santiago,3.530,741,601,695,762,731,,,,,,,,2024,Al día
 77,SEREMI Metropolitana de Santiago,112246,Clínica Europa,15,2,1,1,1,4,2,4,,,,,,2024,Al día
 78,SEREMI Metropolitana de Santiago,112248,Hospital Dipreca Teniente Hernán Merino,5.141,920,755,842,847,935,842,,,,,,,2024,Al día
@@ -50,9 +50,9 @@
 90,SEREMI Metropolitana de Santiago,112510,Clínica Universidad de Chile Quilín,355,100,56,64,67,68,,,,,,,,2024,Al día
 91,SEREMI Metropolitana de Santiago,112530,Hospital Militar de Santiago,3.435,709,524,735,678,789,,,,,,,,2024,Al día
 92,SEREMI Metropolitana de Santiago,112954,Red Salud Providencia ex Clínica AvanSalud Providencia,5.674,1.622,1.058,1.464,1.529,,1,,,,,,,2024,Pendiente
-93,SEREMI Metropolitana de Santiago,112999,Clínica Corporación de Ayuda al Paciente Mental,7,4,,,,2,,1,,,,,,2024,Pendiente
-94,SEREMI Metropolitana de Santiago,113213,Clínica San Miguel,1,1,,,,,,,,,,,,2024,Pendiente
-95,SEREMI Metropolitana de Santiago,114202,Clínica Psiquiatrica Raquel Gaete,4,1,,,,1,1,1,,,,,,2024,Pendiente
+93,SEREMI Metropolitana de Santiago,112999,Clínica Corporación de Ayuda al Paciente Mental,7,4,0,0,0,2,0,1,,,,,,2024,Al día
+94,SEREMI Metropolitana de Santiago,113213,Clínica San Miguel,1,1,0,0,0,0,,,,,,,,2024,Al día
+95,SEREMI Metropolitana de Santiago,114202,Clínica Psiquiatrica Raquel Gaete,4,1,0,0,0,1,1,1,,,,,,2024,Al día
 96,SEREMI Metropolitana de Santiago,114206,Centro de Rehabilitación Capredena,87,13,14,17,13,17,13,,,,,,,2024,Al día
 97,SEREMI Metropolitana de Santiago,114209,Clínica Santa Elena,,,,,,,,,,,,,,2024,Pendiente
 98,SEREMI Metropolitana de Santiago,114212,Clínica Familia,68,12,11,13,8,11,13,,,,,,,2024,Al día
@@ -62,11 +62,11 @@
 102,SEREMI Metropolitana de Santiago,200063,Clínica Alemana de La Dehesa,1.802,359,310,374,392,367,,,,,,,,2024,Al día
 103,SEREMI Metropolitana de Santiago,200081,Clínica Orema,17,9,3,3,2,,,,,,,,,2024,Pendiente
 104,SEREMI Metropolitana de Santiago,200090,Clínica Policenter,229,35,30,30,38,61,33,2,,,,,,2024,Al día
-105,SEREMI Metropolitana de Santiago,200091,Mirandes S.P.A.,370,72,79,64,75,75,5,,,,,,,2024,Al día
+105,SEREMI Metropolitana de Santiago,200091,Mirandes S.P.A.,371,72,79,64,75,75,6,,,,,,,2024,Al día
 106,SEREMI Metropolitana de Santiago,200193,Clínica WLK,41,22,10,9,,,,,,,,,,2024,Pendiente
 107,SEREMI Metropolitana de Santiago,200234,Clínica MEDS La Dehesa,6.150,1.010,703,973,1.147,1.194,1.123,,,,,,,2024,Al día
 108,SEREMI Metropolitana de Santiago,200486,Clínica BUPA Santiago,9.335,1.573,1.284,1.632,1.583,1.649,1.614,,,,,,,2024,Al día
-109,SEREMI Metropolitana de Santiago,200641,Clínica Cima Salud,,,,,,,,,,,,,,2024,Pendiente
+109,SEREMI Metropolitana de Santiago,200641,Clínica Cima Salud,,0,0,0,0,,,,,,,,,2024,Pendiente
 110,SEREMI Metropolitana de Santiago,201267,Clínica Alonso de Córdova,16,16,,,,,,,,,,,,2024,Pendiente
 111,SEREMI Metropolitana de Santiago,201288,Clínica Indisa (Maipú),1.364,339,296,368,361,,,,,,,,,2024,Pendiente
-112,SEREMI Metropolitana de Santiago,201310,Centro Médico Santa Lucía,,,,,,,,,,,,,,2024,Pendiente
+112,SEREMI Metropolitana de Santiago,201310,Centro Médico Santa Lucía,,0,0,0,0,0,0,0,,,,,,2024,Al día
