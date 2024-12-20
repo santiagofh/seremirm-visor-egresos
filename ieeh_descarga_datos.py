@@ -31,6 +31,7 @@ def extraeTable(url):
 def seleccionar_y_ajustar_df(df, year):
     new_header = df.iloc[0]
     df = df[1:]
+
     df.columns = new_header
     df['SEREMI de Salud'] = df['SEREMI de Salud'].fillna(method='ffill')
     df_metropolitana = df[df['SEREMI de Salud'] == "SEREMI Metropolitana de Santiago"]
@@ -90,6 +91,7 @@ def pendientes(df,control_mes):
     estado_counts = df['Estado'].value_counts().reset_index()
     estado_counts.columns = ['Estado', 'Número de Establecimientos']
     return df, estado_counts    
+    
 def rellenar_con_reporte_0(df, reporte_0):
     for codigo, data in reporte_0.items():
         for mes, valor in data.items():
@@ -120,5 +122,6 @@ df_2024_pendientes, tabla_pendientes=pendientes(df_2024_ajustado_reporte0,contro
 #%%
 
 df_2024_pendientes.to_csv('establecimientos_pendientes.csv')
+
 tabla_pendientes.to_csv('tabla_pendientes.csv')
 # %%
