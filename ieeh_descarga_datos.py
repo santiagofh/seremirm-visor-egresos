@@ -13,6 +13,7 @@ import json
 # Definir URLs del reporte
 url_ieeh_2023 = 'https://reportesdeis.minsal.cl/ieeh/2023/Reporte/EstadoRegistroEgresoSeremiResumen.aspx'
 url_ieeh_2024 = 'https://reportesdeis.minsal.cl/ieeh/2024/Reporte/EstadoRegistroEgresoSeremiResumen.aspx'
+
 ieeh_reporte_0 = r"C:\Users\fariass\OneDrive - SUBSECRETARIA DE SALUD PUBLICA\Escritorio\GIE\IEEH-REM20\IEEH - Reporte 0\ieeh_reporte_0.json"
 # Definir función para extraer la tabla de la URL
 def extraeTable(url):
@@ -31,7 +32,6 @@ def extraeTable(url):
 def seleccionar_y_ajustar_df(df, year):
     new_header = df.iloc[0]
     df = df[1:]
-
     df.columns = new_header
     df['SEREMI de Salud'] = df['SEREMI de Salud'].fillna(method='ffill')
     df_metropolitana = df[df['SEREMI de Salud'] == "SEREMI Metropolitana de Santiago"]
@@ -55,6 +55,11 @@ def seleccionar_y_ajustar_df(df, year):
 
     df_metropolitana.rename(columns=dict_mont_num, inplace=True)
     df_metropolitana['Año'] = year  # Agregar columna de año
+        # Convertir columnas de meses a números
+    for month in range(1, 13):
+        if month in df_metropolitana.columns:
+            df_metropolitana[month] = pd.to_numeric(df_metropolitana[month].str.replace('.', '', regex=False), errors='coerce')
+    df_metropolitana['Total'] = pd.to_numeric(df_metropolitana['Total'].str.replace('.', '', regex=False), errors='coerce')
     return df_metropolitana
 
 def calculate_business_days(date, business_days):
@@ -70,12 +75,25 @@ def es_despues_de_los_primeros_10_dias_habiles():
     now = datetime.now()
     first_day_of_month = now.replace(day=1)
     first_10_business_days_end = calculate_business_days(first_day_of_month, 10)
-
-    # Verifica si la fecha actual está después del final de los primeros 10 días hábiles
     if now >= first_10_business_days_end:
-        return True  # Estamos después de los primeros 10 días hábiles
+        return True
     else:
-        return False  # Estamos dentro de los primeros 10 días hábiles
+        return False
+
+def diez_dias_habiles_mes_subsiguiente():
+    now = datetime.now()
+    # Obtener el primer día del mes subsiguiente
+    if now.month == 12:
+        first_day_of_subsequent_month = datetime(year=now.year + 1, month=1, day=1)
+    else:
+        first_day_of_subsequent_month = datetime(year=now.year, month=now.month + 1, day=1)
+
+    # Calcular los primeros 10 días hábiles del mes subsiguiente
+    first_10_business_days_end = calculate_business_days(first_day_of_subsequent_month, 10)
+
+    # Verificar si la fecha actual está después de los primeros 10 días hábiles
+    return now >= first_10_business_days_end
+
 def pendientes(df,control_mes):
     now = datetime.now()
     current_month = now.month
@@ -116,12 +134,14 @@ df_2024=extraeTable(url_ieeh_2024)
 df_2024_ajustado=seleccionar_y_ajustar_df(df_2024, 2024)
 df_2024_ajustado_reporte0=rellenar_con_reporte_0(df_2024_ajustado,reporte_0)
 #%%
+control_mes = diez_dias_habiles_mes_subsiguiente()
 control_mes=es_despues_de_los_primeros_10_dias_habiles()
-df_2024_pendientes, tabla_pendientes=pendientes(df_2024_ajustado_reporte0,control_mes)
+df_2024_pendientes, tabla_pendientes = pendientes(df_2024_ajustado_reporte0, control_mes)
+
 
 #%%
 
-df_2024_pendientes.to_csv('establecimientos_pendientes.csv')
-
-tabla_pendientes.to_csv('tabla_pendientes.csv')
+tabla_pendientes.to_csv('tabla_pendientes.csv', index=False)
+df_2024_pendientes.to_csv('establecimientos_pendientes.csv', index=False)
+df_2024_pendientes.to_excel('establecimientos_pendientes.xlsx', index=False)
 # %%
