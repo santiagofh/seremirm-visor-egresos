@@ -1,4 +1,4 @@
-#%%
+
 import pandas as pd
 from datetime import datetime, timedelta
 
@@ -50,7 +50,7 @@ def should_mark_pending(current_date, column_date):
 for col in monthly_columns:
     col_date = datetime.strptime(col, "%Y-%m")
     data[col] = data[col].apply(
-        lambda x: 'Pendiente' if pd.isna(x) and should_mark_pending(current_date, col_date) else x
+        lambda x: 'Pendiente' if pd.isna(x) and should_mark_pending(current_date, col_date) else (x if pd.isna(x) else x)
     )
 
 # Save the updated DataFrame to a new CSV file
@@ -58,5 +58,6 @@ output_file_path = 'ieeh_pendiente_2024.csv'
 data.to_csv(output_file_path, index=False)
 
 print(f"Archivo actualizado guardado en: {output_file_path}")
+
 
 # %%
